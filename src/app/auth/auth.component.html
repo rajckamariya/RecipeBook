@@ -1,11 +1,17 @@
+<ng-template appPlaceholder> </ng-template>
 <div class="row">
   <div class="col-xs-12">
     <div *ngIf="isLoading" style="text-align: center">
       <app-loading-spinner></app-loading-spinner>
     </div>
-    <div *ngIf="error != ''" class="alert alert-danger">
+    <!-- <app-alert
+      [message]="error"
+      (close)="onErrorHandle()"
+      *ngIf="error != ''"
+    ></app-alert> -->
+    <!-- <div *ngIf="error != ''" class="alert alert-danger">
       <b>{{ error }}</b>
-    </div>
+    </div> -->
     <form #authForm="ngForm" *ngIf="!isLoading" (ngSubmit)="onSubmit(authForm)">
       <div class="form-group">
         <label for="email">Email</label>
